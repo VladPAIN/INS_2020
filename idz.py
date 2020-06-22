@@ -56,7 +56,7 @@ model.compile(optimizer='adam',
               loss=tf.keras.losses.SparseCategoricalCrossentropy(),
               metrics=['accuracy'])
 
-callback = ModelCheckpoint('callbacks/mnist-dense-{epoch:02d}-{val_loss:.4f}.hdf5')
+callbacks = ModelCheckpoint('callbacks/mnist-dense-{epoch:02d}-{val_loss:.4f}.hdf5')
 
 BATCH_SIZE = 32
 train_dataset = train_dataset.cache().repeat().shuffle(num_train_examples).batch(BATCH_SIZE)
